@@ -1,6 +1,6 @@
 # Yorik Lib
 *Library of shared functions used by other extensions in own SketchUp development*
-##### `yorik_lib.rb`
+### `yorik_lib.rb`
 
 *loader for `yorik_lib_core.rb`*
 
@@ -11,7 +11,7 @@ PLUGIN_COPYRIGHT
 PLUGIN_CREATOR
 ```
 
-##### `yorik_lib/yorik_lib_core.rb`
+### `yorik_lib/yorik_lib_core.rb`
 
 **Methods**
 
