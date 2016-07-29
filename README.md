@@ -4,15 +4,16 @@ Library of core shared functions used by other extensions.Usage only for SketchU
 
 
 ```ruby
-YorikTools
-YorikTools::YorikLib
+module YorikTools
+module YorikTools::YorikLib
 ```
 
 Files in project
+----------------
 
 #### `yorik_lib.rb`
 
-*loader for `yorik_lib_core.rb`*
+*Loader for `yorik_lib_core.rb`*
 
 **Constants**
 
@@ -22,6 +23,9 @@ PLUGIN_CREATOR
 ```
 
 #### `yorik_lib/yorik_lib_core.rb`
+*Library of core shared methods*
+
+**Methods**
 
 ```ruby
 def get_definition
@@ -34,7 +38,14 @@ def about_information
 def help_information
 ```
 
-**Methods**
+#### `yorik_lib/yorik_langhandler`
+*Rewriting of Sketchup API class [LanguageHandler](http://www.sketchup.com/intl/en/developer/docs/ourdoc/languagehandler)*
+
+**Class**
+
+```ruby
+class YorikLanguageHandler
+```
 
 CHANGELOG
 ---------
