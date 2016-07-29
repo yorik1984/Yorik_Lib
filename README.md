@@ -14,7 +14,6 @@ Files in project
 #### `yorik_lib.rb`
 
 *Loader for `yorik_lib/yorik_lib_core.rb`*
-=======
 
 **Constants**
 
@@ -74,6 +73,7 @@ Licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt).
 >
 > You should have received a copy of the GNU General Public License
 > along with Yorik Lib.  If not, see <http://www.gnu.org/licenses/>.
+> 
 
 ---
 Special thanks for Thomas Thomassen:
