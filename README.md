@@ -1,5 +1,16 @@
-# Yorik Lib
-*Library of shared functions used by other extensions in own SketchUp development*
+Yorik Lib
+=========
+Library of core shared functions used by other extensions.Usage only for SketchUp plugins development. Contain classes, methods, constants. Included in modules:
+
+
+
+```ruby
+YorikTools
+YorikTools::YorikLib
+```
+
+
+
 ### `yorik_lib.rb`
 
 *loader for `yorik_lib_core.rb`*
@@ -15,18 +26,12 @@ PLUGIN_CREATOR
 
 **Methods**
 
-- COMPONENTS AND GROUPS
-```ruby
-def self.get_definition
-def self.include_element?
-def self.recursive_level_search
-def self.select_components_messagebox?
-```
-- INFO
-```ruby
-def self.about_information
-def self.help_information
-```
+[CHANGELOG](HISTORY.md)
+---------
+
+[LICENSE](LICENSE)
+-------
+
 
 ---
 Special thanks for Thomas Thomassen:
