@@ -39,13 +39,15 @@ def help_information
 ```
 
 #### `yorik_lib/yorik_langhandler`
-*Rewriting of Sketchup API class [LanguageHandler](http://www.sketchup.com/intl/en/developer/docs/ourdoc/languagehandler)*
+*Rewriting of basic Sketchup API class [LanguageHandler](http://www.sketchup.com/intl/en/developer/docs/ourdoc/languagehandler) to make translations for plugins* 
 
 **Class**
 
 ```ruby
 class YorikLanguageHandler
 ```
+
+For more information see [Yardoc documentation](../doc/_index.html)
 
 CHANGELOG
 ---------

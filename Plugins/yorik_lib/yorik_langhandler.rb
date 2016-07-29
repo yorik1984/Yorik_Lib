@@ -30,11 +30,20 @@
 # History:
 # - 1.0 Initial release 14-July-2016
 # ------------------------------------------------------------------------------
-require 'sketchup.rb'
-require 'extensions.rb'
+require "sketchup.rb"
+require "extensions.rb"
 
+# Library of core shared methods used by other extensions.
+# Usage only for SketchUp plugins development.
+#
+# @author Yurij Kulchevich aka yorik1984
 module YorikTools::YorikLib
 
+  # Rewriting of basic Sketchup API class to make translations for plugins
+  #
+  # @author Yurij Kulchevich aka yorik1984
+  # @since 1.0
+  # @see http://www.sketchup.com/intl/en/developer/docs/ourdoc/languagehandler
   class YorikLanguageHandler
 
     def initialize(strings_file_name, translation = 'en')
