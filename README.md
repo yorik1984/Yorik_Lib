@@ -13,11 +13,8 @@ Files in project
 
 #### `yorik_lib.rb`
 
-<<<<<<< HEAD
 *Loader for `yorik_lib/yorik_lib_core.rb`*
 =======
-*Loader for `yorik_lib_core.rb`*
->>>>>>> b5385bebfb12af75942b387156ca20e25685a06a
 
 **Constants**
 
