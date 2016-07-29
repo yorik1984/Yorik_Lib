@@ -47,7 +47,7 @@ def help_information
 class YorikLanguageHandler
 ```
 
-For more information see [Yardoc documentation](../doc/_index.html)
+For more information see [Yardoc documentation](../doc)
 
 CHANGELOG
 ---------
