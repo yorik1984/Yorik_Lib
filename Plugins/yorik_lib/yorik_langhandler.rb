@@ -32,6 +32,7 @@
 # ------------------------------------------------------------------------------
 require "sketchup.rb"
 require "extensions.rb"
+require "csv"
 
 # Library of core shared methods used by other extensions.
 # Usage only for SketchUp plugins development.
@@ -46,18 +47,12 @@ module YorikTools::YorikLib
   # @see http://www.sketchup.com/intl/en/developer/docs/ourdoc/languagehandler
   class YorikLanguageHandler
 
-    def initialize(strings_file_name, translation = 'en')
-      unless strings_file_name.is_a?(String)
-        raise ArgumentError, 'must be a String'
+    def initialize(plugin_id)
+      unless plugin_id.is_a?(String)
+        raise ArgumentError, "must be a String"
       end
       @strings = Hash.new { |hash, key| key }
-      stack = caller_locations(1, 1)
-      if stack && stack.length > 0 && File.exist?(stack[0].path)
-        extension_path = stack[0].path
-      else
-        extension_path = nil
-      end
-      parse(strings_file_name, extension_name, extension_path, translation)
+      parse(plugin_id)
     end
 
     def [](key)
@@ -68,71 +63,50 @@ module YorikTools::YorikLib
       return value
     end
 
-    alias :GetString :[]
-
-    def resource_path(file_name)
-      unless file_name.is_a?(String)
-        raise ArgumentError, 'must be a String'
-      end
-      if @language_folder
-        file_path = File.join(@language_folder, file_name)
-        if File.exists?(file_path)
-          return file_path
-        end
-      end
-      return ''
-    end
-
-    alias :GetResourcePath :resource_path
-
     def strings
       return @strings
     end
 
-    alias :GetStrings :strings
+    def self.make_translation_list(inputbox_window_name)
+      lang_file_name = File.join(YorikTools::RESOURCE_FOLDER, "lang.ini")
+      lang_folder_file_name = File.join(YorikTools::RESOURCE_FOLDER, "lang_folder.csv")
+      File.open(lang_file_name).each { |line| translation = line.chomp }
+      language_list = {}
+      CSV.foreach(lang_folder_file_name, col_sep: ',') do |row|
+        language_list[row[1].to_sym] = row[0].to_s
+      end
+      prompts = [inputbox_window_name]
+      defaults = []
+      defaults[0] = language_list[(YorikTools::DEFAULT_LOCALIZATION).to_sym]
+      list = []
+      list[0] = ""
+      language_list.each_value { |value| list[0] = list[0] + value.to_s + "|" }
+      inputbox = UI.inputbox(prompts, defaults, list, inputbox_window_name)
+      current_translation = language_list.key(inputbox[0]).to_s
+      File.open(lang_file_name, 'w'){ |file| file.write current_translation}
+    end
 
-    def strings_file
-      @strings_file ? @strings_file.dup : nil
+    def strings_file_path(translation, plugin_id)
+      File.join(YorikTools::RESOURCE_FOLDER, translation, plugin_id +
+                YorikTools::TRANSLATION_FILE_TYPE)
+    end
+
+    def find_strings_file(plugin_id)
+      translation = YorikTools::DEFAULT_LOCALIZATION
+      lang_file_name = File.join(YorikTools::RESOURCE_FOLDER, "lang.ini")
+      File.open(lang_file_name).each { |line| translation = line.chomp }
+      strings_file = strings_file_path(translation, plugin_id)
+      return strings_file if File.exist?(strings_file)
+      strings_file_path(YorikTools::DEFAULT_LOCALIZATION, plugin_id)
     end
 
     private
 
-    def find_strings_file(strings_file_name, extension_name,
-                          extension_file_path = nil, translation)
-      plugins = Sketchup.find_support_file "Plugins/"
-      strings_file_path = ''
-      if extension_file_path
-        file_type = File.extname(extension_file_path)
-        basename = File.basename(extension_file_path, file_type)
-        extension_path = File.dirname(extension_file_path)
-        resource_folder_path = File.join(extension_path, basename, 'Resources')
-        resource_folder_path = File.expand_path(resource_folder_path)
-        strings_file_path = File.join(resource_folder_path, translation,
-          strings_file_name)
-        if File.exists?(strings_file_path) == false
-          strings_file_path = File.join(resource_folder_path, translation,
-            strings_file_name)
-        end
-      end
-      if File.exists?(strings_file_path) == false
-        strings_file_path = Sketchup.get_resource_path(strings_file_name)
-      end
-      if strings_file_path && File.exists?(strings_file_path)
-        return strings_file_path
-      else
-        return nil
-      end
-    end
-
-    def parse(strings_file_name, extension_name, extension_file_path = nil,
-              translation)
-      strings_file = find_strings_file(strings_file_name, extension_name,
-                                       extension_file_path, translation)
+    def parse(plugin_id)
+      strings_file = find_strings_file(plugin_id)
       if strings_file.nil?
         return false
       end
-      @strings_file = strings_file
-      @language_folder = File.expand_path(File.dirname(strings_file))
       File.open(strings_file, 'r:BOM|UTF-8') { |lang_file|
         entry_string = ''
         in_comment_block = false

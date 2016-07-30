@@ -190,13 +190,15 @@ module YorikTools::YorikLib
   #
   # @return [Sketchup::UI] message box with author name and short description
   # @since 1.0
-  def about_information(plugin_id)
-    plugin_id_name =
+  def self.about_information(plugin_id)
+    plugin_name =
       Object.const_get "YorikTools::#{plugin_id}::PLUGIN_NAME"
-    plugin_id_description =
+    plugin_description =
       Object.const_get "YorikTools::#{plugin_id}::PLUGIN_DESCRIPTION"
-    UI.messagebox(plugin_id_name + "\n" + plugin_id_description + "\n" +
-                  YorikTools::PLUGIN_COPYRIGHT)
+    plugin_version =
+      Object.const_get "YorikTools::#{plugin_id}::PLUGIN_VERSION"
+    UI.messagebox(plugin_name + "\n" + plugin_description + "\n" +
+                  YorikTools::PLUGIN_CREATOR + "\nv " + plugin_version)
   end
 
   # Open help page in new tab of current web browser
@@ -205,7 +207,7 @@ module YorikTools::YorikLib
   # @param msg_error [String] open error message
   #
   # @since 1.0
-  def help_information(plugin_id, msg_error = "Error opening help page")
+  def self.help_information(plugin_id, msg_error = "Error opening help page")
     plugin_file_core_name = plugin_id.downcase
     plugins = Sketchup.find_support_file "Plugins/"
     help_file_folder = "yorik_#{plugin_file_core_name}/help/"
