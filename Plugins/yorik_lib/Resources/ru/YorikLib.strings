@@ -1,4 +1,6 @@
 // Русский
 "About..."="О программе...";
+"Error opening help file:"="Ошибка открытия файла справки:";
+"Help"="Help";
+"Language translation"="Язык интерфейса";
 "Library of shared functions used by other extensions"="Библиотека методов для использования другими плагинами";
-"Localization"="Язык интерфейса";

@@ -1,41 +1,80 @@
 Yorik Lib
 =========
-Library of core shared functions used by other extensions.Usage only for SketchUp plugins development. Contain classes, methods, constants. Included in modules:
+Library of core shared functions used by other extensions.Usage only for SketchUp plugins development. Contain classes, methods, constants. Also have classes for making plugin translation. Most of them Included in modules:
 
+```ruby
+module YorikLib
+```
+
+and classes
+
+```ruby
+class YorikLanguageHandlerDefault
+class YorikLanguageHandler
+```
+
+Directories list
+----------------
+#### `Plugins/yorik_lib/Resources`
+Include .strings file for YorikTools plugins translation.
+
+#### `Plugins/yorik_lib/help`
+Include help file for YorikTools plugins.
+
+Files list
+----------------
+
+#### `Plugins/yorik_lib.rb`
+
+*Loader for YorikLib `Plugins/yorik_lib/yorik_lib_core.rb`*
+Include basic constants and methods to load YorikLib into SketchUp.
 
 ```ruby
 module YorikTools
-module YorikTools::YorikLib
+module YorikLibLoader
 ```
-
-Files in project
-----------------
-
-#### `yorik_lib.rb`
-
-*Loader for `yorik_lib/yorik_lib_core.rb`*
 
 **Constants**
 
 ```ruby
+FILENAMESPACE
+PATH_ROOT
+PATH
 PLUGIN_COPYRIGHT
 PLUGIN_CREATOR
+PLUGIN_ID
+PLUGIN_NAME
+PLUGIN_VERSION
+RESOURCES_DIR
 ```
 
-#### `yorik_lib/yorik_lib_core.rb`
+#### `Plugins/yorik_lib/yorik_lib_core.rb`
+    
+Include basic methods to make user menu and load YorikLib into SketchUp.
+
+```ruby
+module YorikTools::YorikLibLoader
+```
+
+
+#### `Plugins/yorik_lib/yorik_lib_main_collection.rb`
 *Library of core shared methods*
+
+```ruby
+module YorikLib
+```
 
 **Methods**
 
 ```ruby
-def get_definition
-def nested_level
-def collect_by_attribute
-def attributes_list
-def attribute_value
-def components_selected_mbox?
-def about_information
-def help_information
+def self.get_definition
+def self.nested_level
+def self.collect_by_attribute
+def self.attributes_list
+def self.attribute_value
+def self.components_selected_mbox?
+def self.about_information
+def self.open_help_file
 ```
 
 #### `yorik_lib/yorik_langhandler`
@@ -44,6 +83,7 @@ def help_information
 **Class**
 
 ```ruby
+class YorikLanguageHandlerDefault
 class YorikLanguageHandler
 ```
 

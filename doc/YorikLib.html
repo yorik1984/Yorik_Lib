@@ -4,31 +4,31 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Module: YorikTools::YorikLib
+  Module: YorikLib
   
     &mdash; Documentation by YARD 0.9.5
   
 </title>
 
-  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
 
-  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "YorikTools::YorikLib";
-  relpath = '../';
+  pathId = "YorikLib";
+  relpath = '';
 </script>
 
 
-  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
 
-  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 
 
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../class_list.html"></iframe>
+      <iframe id="nav" src="class_list.html"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -36,9 +36,9 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../_index.html">Index (Y)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../YorikTools.html" title="YorikTools (module)">YorikTools</a></span></span>
-     &raquo; 
+    <a href="_index.html">Index (Y)</a> &raquo;
+    
+    
     <span class="title">YorikLib</span>
   
 </div>
@@ -46,7 +46,7 @@
         <div id="search">
   
     <a class="full_list_link" id="class_list_link"
-        href="../class_list.html">
+        href="class_list.html">
 
         <svg width="24" height="24">
           <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
@@ -59,9 +59,9 @@
         <div class="clear"></div>
       </div>
 
-      <iframe id="search_frame" src="../class_list.html"></iframe>
+      <iframe id="search_frame" src="class_list.html"></iframe>
 
-      <div id="content"><h1>Module: YorikTools::YorikLib
+      <div id="content"><h1>Module: YorikLib
   
   
   
@@ -80,9 +80,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>Plugins/yorik_lib.rb<span class="defines">,<br />
-  Plugins/yorik_lib/yorik_langhandler.rb,<br /> Plugins/yorik_lib/yorik_lib_core.rb</span>
-</dd>
+    <dd>Plugins/yorik_lib/yorik_lib_main_collection.rb</dd>
   </dl>
   
 </div>
@@ -113,57 +111,7 @@ Usage only for SketchUp plugins development.</p>
   
 </ul>
 
-</div><h2>Defined Under Namespace</h2>
-<p class="children">
-  
-    
-  
-    
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="YorikLib/YorikLanguageHandler.html" title="YorikTools::YorikLib::YorikLanguageHandler (class)">YorikLanguageHandler</a></span>
-    
-  
-</p>
-
-  <h2>Constant Summary</h2>
-  <dl class="constants">
-    
-      <dt id="PLUGIN_ID-constant" class="">PLUGIN_ID =
-        
-      </dt>
-      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>YorikLib</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-      <dt id="PLUGIN_NAME-constant" class="">PLUGIN_NAME =
-        
-      </dt>
-      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Yorik Lib</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-      <dt id="PLUGIN_DESCRIPTION-constant" class="">PLUGIN_DESCRIPTION =
-        
-      </dt>
-      <dd><pre class="code"><span class='ivar'>@yorik_lib_lh</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Library of shared functions used by other extensions</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span></pre></dd>
-    
-      <dt id="PLUGIN_VERSION-constant" class="">PLUGIN_VERSION =
-        
-      </dt>
-      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1.0</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-      <dt id="FILENAMESPACE-constant" class="">FILENAMESPACE =
-        
-      </dt>
-      <dd><pre class="code"><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_basename'>basename</span><span class='lparen'>(</span><span class='kw'>__FILE__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="PATH_ROOT-constant" class="">PATH_ROOT =
-        
-      </dt>
-      <dd><pre class="code"><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span><span class='lparen'>(</span><span class='kw'>__FILE__</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-      <dt id="PATH-constant" class="">PATH =
-        
-      </dt>
-      <dd><pre class="code"><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>PATH_ROOT</span><span class='comma'>,</span> <span class='const'>FILENAMESPACE</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-  </dl>
-
+</div>
 
 
 
@@ -181,7 +129,7 @@ Usage only for SketchUp plugins development.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#attribute_value-instance_method" title="#attribute_value (instance method)">#<strong>attribute_value</strong>(entity, name, dictionary_name = &quot;dynamic_attributes&quot;)  &#x21d2; String </a>
+      <a href="#attribute_value-class_method" title="attribute_value (class method)">.<strong>attribute_value</strong>(entity, name, dictionary_name = &quot;dynamic_attributes&quot;)  &#x21d2; String </a>
     
 
     
@@ -204,7 +152,7 @@ Usage only for SketchUp plugins development.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#attributes_list-instance_method" title="#attributes_list (instance method)">#<strong>attributes_list</strong>(entity, dictionary_name = &quot;dynamic_attributes&quot;)  &#x21d2; Array </a>
+      <a href="#attributes_list-class_method" title="attributes_list (class method)">.<strong>attributes_list</strong>(entity, dictionary_name = &quot;dynamic_attributes&quot;)  &#x21d2; Array </a>
     
 
     
@@ -227,7 +175,7 @@ Usage only for SketchUp plugins development.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#collect_by_attribute-instance_method" title="#collect_by_attribute (instance method)">#<strong>collect_by_attribute</strong>(selection, attribute_list, nested_level, dictionary_name = &quot;dynamic_attributes&quot;, components_list = [], current_nested_level = 2)  &#x21d2; Array </a>
+      <a href="#collect_by_attribute-class_method" title="collect_by_attribute (class method)">.<strong>collect_by_attribute</strong>(selection, attribute_list, nested_level, dictionary_name = &quot;dynamic_attributes&quot;, components_list = [], current_nested_level = 2)  &#x21d2; Array </a>
     
 
     
@@ -250,7 +198,7 @@ Usage only for SketchUp plugins development.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#components_selected_mbox%3F-instance_method" title="#components_selected_mbox? (instance method)">#<strong>components_selected_mbox?</strong>(selection, msg_components = &quot;Select only components&quot;, msg_nothing = &quot;Nothing selected&quot;)  &#x21d2; Boolean </a>
+      <a href="#components_selected_mbox%3F-class_method" title="components_selected_mbox? (class method)">.<strong>components_selected_mbox?</strong>(selection, msg_components = &quot;Select only components&quot;, msg_nothing = &quot;Nothing selected&quot;)  &#x21d2; Boolean </a>
     
 
     
@@ -273,7 +221,7 @@ Usage only for SketchUp plugins development.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_definition-instance_method" title="#get_definition (instance method)">#<strong>get_definition</strong>(entity)  &#x21d2; Sketchup::ComponentDefinition or NilClass </a>
+      <a href="#get_definition-class_method" title="get_definition (class method)">.<strong>get_definition</strong>(entity)  &#x21d2; Sketchup::ComponentDefinition or NilClass </a>
     
 
     
@@ -296,7 +244,7 @@ Usage only for SketchUp plugins development.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#nested_level-instance_method" title="#nested_level (instance method)">#<strong>nested_level</strong>(selection, deep_level = 1, nesting_levels = [1])  &#x21d2; Numeric </a>
+      <a href="#nested_level-class_method" title="nested_level (class method)">.<strong>nested_level</strong>(selection, deep_level = 1, nesting_levels = [1])  &#x21d2; Numeric </a>
     
 
     
@@ -351,7 +299,7 @@ Usage only for SketchUp plugins development.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#html_help_information-class_method" title="html_help_information (class method)">.<strong>html_help_information</strong>(extension, msg_error, dir, file)  &#x21d2; Object </a>
+      <a href="#open_help_file-class_method" title="open_help_file (class method)">.<strong>open_help_file</strong>(extension_path, help_file_path, msg_error = &quot;Error opening help file:&quot;)  &#x21d2; Object </a>
     
 
     
@@ -365,7 +313,7 @@ Usage only for SketchUp plugins development.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Open help page in new tab of current web browser.</p>
+    <span class="summary_desc"><div class='inline'><p>Open help file.</p>
 </div></span>
   
 </li>
@@ -456,13 +404,13 @@ Usage only for SketchUp plugins development.</p>
       <pre class="lines">
 
 
+194
 195
 196
-197
-198</pre>
+197</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_core.rb', line 195</span>
+      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_main_collection.rb', line 194</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_about_extension_mbox'>about_extension_mbox</span><span class='lparen'>(</span><span class='id identifier rubyid_extension'>extension</span><span class='rparen'>)</span>
   <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='id identifier rubyid_extension'>extension</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_extension'>extension</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
@@ -474,144 +422,9 @@ Usage only for SketchUp plugins development.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="html_help_information-class_method">
+  <h3 class="signature " id="attribute_value-class_method">
   
-    .<strong>html_help_information</strong>(extension, msg_error, dir, file)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>Open help page in new tab of current web browser</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>extension</span>
-      
-      
-        <span class='type'>(<tt>SketchupExtension</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>full information about extension</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>msg_error</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>open error message</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>dir</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>subdir with help file</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>file</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>help file name</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Since:</p>
-<ul class="since">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'><p>1.0</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-207
-208
-209
-210
-211
-212
-213
-214</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_core.rb', line 207</span>
-
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_html_help_information'>html_help_information</span><span class='lparen'>(</span><span class='id identifier rubyid_extension'>extension</span><span class='comma'>,</span> <span class='id identifier rubyid_msg_error'>msg_error</span><span class='comma'>,</span> <span class='id identifier rubyid_dir'>dir</span><span class='comma'>,</span> <span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_help_file'>help_file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_extension'>extension</span><span class='period'>.</span><span class='id identifier rubyid_extension_path'>extension_path</span><span class='comma'>,</span> <span class='id identifier rubyid_dir'>dir</span><span class='comma'>,</span> <span class='id identifier rubyid_file'>file</span> <span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_help_file'>help_file</span>
-    <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openURL'>openURL</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>file://</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_help_file'>help_file</span>
-  <span class='kw'>else</span>
-    <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_msg_error'>msg_error</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
-  <div id="instance_method_details" class="method_details_list">
-    <h2>Instance Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="attribute_value-instance_method">
-  
-    #<strong>attribute_value</strong>(entity, name, dictionary_name = &quot;dynamic_attributes&quot;)  &#x21d2; <tt>String</tt> 
+    .<strong>attribute_value</strong>(entity, name, dictionary_name = &quot;dynamic_attributes&quot;)  &#x21d2; <tt>String</tt> 
   
 
   
@@ -717,6 +530,7 @@ to an Entity</p>
       <pre class="lines">
 
 
+145
 146
 147
 148
@@ -729,13 +543,12 @@ to an Entity</p>
 155
 156
 157
-158
-159</pre>
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_core.rb', line 146</span>
+      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_main_collection.rb', line 145</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_attribute_value'>attribute_value</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_dictionary_name'>dictionary_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dynamic_attributes</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_attribute_value'>attribute_value</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_dictionary_name'>dictionary_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dynamic_attributes</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>ComponentInstance</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_get_attribute'>get_attribute</span> <span class='id identifier rubyid_dictionary_name'>dictionary_name</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span>
@@ -755,9 +568,9 @@ to an Entity</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="attributes_list-instance_method">
+  <h3 class="signature " id="attributes_list-class_method">
   
-    #<strong>attributes_list</strong>(entity, dictionary_name = &quot;dynamic_attributes&quot;)  &#x21d2; <tt>Array</tt> 
+    .<strong>attributes_list</strong>(entity, dictionary_name = &quot;dynamic_attributes&quot;)  &#x21d2; <tt>Array</tt> 
   
 
   
@@ -849,6 +662,7 @@ to an Entity</p>
       <pre class="lines">
 
 
+123
 124
 125
 126
@@ -860,13 +674,12 @@ to an Entity</p>
 132
 133
 134
-135
-136</pre>
+135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_core.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_main_collection.rb', line 123</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_attributes_list'>attributes_list</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='comma'>,</span> <span class='id identifier rubyid_dictionary_name'>dictionary_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dynamic_attributes</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_attributes_list'>attributes_list</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='comma'>,</span> <span class='id identifier rubyid_dictionary_name'>dictionary_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dynamic_attributes</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_list'>list</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>ComponentInstance</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_definition'>definition</span>
@@ -885,9 +698,9 @@ to an Entity</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="collect_by_attribute-instance_method">
+  <h3 class="signature " id="collect_by_attribute-class_method">
   
-    #<strong>collect_by_attribute</strong>(selection, attribute_list, nested_level, dictionary_name = &quot;dynamic_attributes&quot;, components_list = [], current_nested_level = 2)  &#x21d2; <tt>Array</tt> 
+    .<strong>collect_by_attribute</strong>(selection, attribute_list, nested_level, dictionary_name = &quot;dynamic_attributes&quot;, components_list = [], current_nested_level = 2)  &#x21d2; <tt>Array</tt> 
   
 
   
@@ -1024,7 +837,7 @@ to an Entity</p>
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li><span class='object_link'><a href="#nested_level-instance_method" title="YorikTools::YorikLib#nested_level (method)">#nested_level</a></span></li>
+      <li><span class='object_link'><a href="#nested_level-class_method" title="YorikLib.nested_level (method)">nested_level</a></span></li>
     
   </ul>
 <p class="tag_title">Since:</p>
@@ -1049,6 +862,7 @@ to an Entity</p>
       <pre class="lines">
 
 
+91
 92
 93
 94
@@ -1069,13 +883,12 @@ to an Entity</p>
 109
 110
 111
-112
-113</pre>
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_core.rb', line 92</span>
+      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_main_collection.rb', line 91</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_collect_by_attribute'>collect_by_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_selection'>selection</span><span class='comma'>,</span> <span class='id identifier rubyid_attribute_list'>attribute_list</span><span class='comma'>,</span> <span class='id identifier rubyid_nested_level'>nested_level</span><span class='comma'>,</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_collect_by_attribute'>collect_by_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_selection'>selection</span><span class='comma'>,</span> <span class='id identifier rubyid_attribute_list'>attribute_list</span><span class='comma'>,</span> <span class='id identifier rubyid_nested_level'>nested_level</span><span class='comma'>,</span>
                          <span class='id identifier rubyid_dictionary_name'>dictionary_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dynamic_attributes</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
                          <span class='id identifier rubyid_components_list'>components_list</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_current_nested_level'>current_nested_level</span> <span class='op'>=</span> <span class='int'>2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_entity'>entity</span><span class='op'>|</span>
@@ -1103,9 +916,9 @@ to an Entity</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="components_selected_mbox?-instance_method">
+  <h3 class="signature " id="components_selected_mbox?-class_method">
   
-    #<strong>components_selected_mbox?</strong>(selection, msg_components = &quot;Select only components&quot;, msg_nothing = &quot;Nothing selected&quot;)  &#x21d2; <tt>Boolean</tt> 
+    .<strong>components_selected_mbox?</strong>(selection, msg_components = &quot;Select only components&quot;, msg_nothing = &quot;Nothing selected&quot;)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1214,6 +1027,7 @@ showing message box with error message</p>
       <pre class="lines">
 
 
+169
 170
 171
 172
@@ -1227,15 +1041,14 @@ showing message box with error message</p>
 180
 181
 182
-183
-184</pre>
+183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_core.rb', line 170</span>
+      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_main_collection.rb', line 169</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_components_selected_mbox?'>components_selected_mbox?</span><span class='lparen'>(</span><span class='id identifier rubyid_selection'>selection</span><span class='comma'>,</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_components_selected_mbox?'>components_selected_mbox?</span><span class='lparen'>(</span><span class='id identifier rubyid_selection'>selection</span><span class='comma'>,</span>
                               <span class='id identifier rubyid_msg_components'>msg_components</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Select only components</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-                              <span class='id identifier rubyid_msg_nothing'>msg_nothing</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Nothing selected</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+                              <span class='id identifier rubyid_msg_nothing'>msg_nothing</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Nothing selected</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
     <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_msg_nothing'>msg_nothing</span>
     <span class='kw'>return</span> <span class='kw'>false</span>
@@ -1254,9 +1067,9 @@ showing message box with error message</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="get_definition-instance_method">
+  <h3 class="signature " id="get_definition-class_method">
   
-    #<strong>get_definition</strong>(entity)  &#x21d2; <tt>Sketchup::ComponentDefinition or NilClass</tt> 
+    .<strong>get_definition</strong>(entity)  &#x21d2; <tt>Sketchup::ComponentDefinition or NilClass</tt> 
   
 
   
@@ -1329,6 +1142,7 @@ showing message box with error message</p>
       <pre class="lines">
 
 
+47
 48
 49
 50
@@ -1336,13 +1150,12 @@ showing message box with error message</p>
 52
 53
 54
-55
-56</pre>
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_core.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_main_collection.rb', line 47</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_get_definition'>get_definition</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_get_definition'>get_definition</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>ComponentInstance</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_definition'>definition</span>
   <span class='kw'>elsif</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Group</span><span class='rparen'>)</span>
@@ -1357,9 +1170,9 @@ showing message box with error message</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="nested_level-instance_method">
+  <h3 class="signature " id="nested_level-class_method">
   
-    #<strong>nested_level</strong>(selection, deep_level = 1, nesting_levels = [1])  &#x21d2; <tt>Numeric</tt> 
+    .<strong>nested_level</strong>(selection, deep_level = 1, nesting_levels = [1])  &#x21d2; <tt>Numeric</tt> 
   
 
   
@@ -1469,6 +1282,7 @@ Default are parent nested level of the model</p>
       <pre class="lines">
 
 
+68
 69
 70
 71
@@ -1476,13 +1290,12 @@ Default are parent nested level of the model</p>
 73
 74
 75
-76
-77</pre>
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_core.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_main_collection.rb', line 68</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_nested_level'>nested_level</span><span class='lparen'>(</span><span class='id identifier rubyid_selection'>selection</span><span class='comma'>,</span> <span class='id identifier rubyid_deep_level'>deep_level</span> <span class='op'>=</span> <span class='int'>1</span><span class='comma'>,</span> <span class='id identifier rubyid_nesting_levels'>nesting_levels</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_nested_level'>nested_level</span><span class='lparen'>(</span><span class='id identifier rubyid_selection'>selection</span><span class='comma'>,</span> <span class='id identifier rubyid_deep_level'>deep_level</span> <span class='op'>=</span> <span class='int'>1</span><span class='comma'>,</span> <span class='id identifier rubyid_nesting_levels'>nesting_levels</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_entity'>entity</span><span class='op'>|</span>
     <span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='const'>YorikLib</span><span class='op'>::</span><span class='id identifier rubyid_get_definition'>get_definition</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
     <span class='kw'>next</span> <span class='kw'>if</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -1496,12 +1309,128 @@ Default are parent nested level of the model</p>
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="open_help_file-class_method">
+  
+    .<strong>open_help_file</strong>(extension_path, help_file_path, msg_error = &quot;Error opening help file:&quot;)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Open help file. Html help-file will bee open in new tab of current web browser</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>extension_path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>full path to extension folder</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>help_file_path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>relative help file path</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>msg_error</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;Error opening help file:&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>open error message</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'><p>1.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+205
+206
+207
+208
+209
+210
+211
+212</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Plugins/yorik_lib/yorik_lib_main_collection.rb', line 205</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_open_help_file'>open_help_file</span><span class='lparen'>(</span><span class='id identifier rubyid_extension_path'>extension_path</span><span class='comma'>,</span> <span class='id identifier rubyid_help_file_path'>help_file_path</span><span class='comma'>,</span> <span class='id identifier rubyid_msg_error'>msg_error</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error opening help file:</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_help_file'>help_file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_extension_path'>extension_path</span><span class='comma'>,</span> <span class='id identifier rubyid_help_file_path'>help_file_path</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_exist?'>exist?</span><span class='lparen'>(</span><span class='id identifier rubyid_help_file'>help_file</span><span class='rparen'>)</span>
+    <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openURL'>openURL</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>file://</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_help_file'>help_file</span>
+  <span class='kw'>else</span>
+    <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='lparen'>(</span><span class='id identifier rubyid_msg_error'>msg_error</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_help_file'>help_file</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Tue Aug  2 02:46:24 2016 by
+  Generated on Sat Aug  6 14:58:01 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.0.0).
 </div>

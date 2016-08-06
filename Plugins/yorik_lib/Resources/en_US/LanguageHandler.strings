@@ -1,0 +1,9 @@
+// English
+"Error to initialize"="Error to initialize";
+"It will be available choose only "="It will be available choose only ";
+" (default) localization."=" (default) localization.";
+"Please, see more in help."="Please, see more in help.";
+"Empty localization name in 1st line in files:"="Empty localization name in 1st line in files:";
+"It will be using locale code in language selector. "="It will be using locale code in language selector. ";
+"Missing .strings files:"="Missing .strings files:";
+"Translate for this language(s) will be not supporting."="Translate for this language(s) will be not supporting.";

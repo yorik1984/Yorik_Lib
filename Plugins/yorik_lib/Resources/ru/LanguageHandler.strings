@@ -1,0 +1,9 @@
+// Русский
+"Error to initialize"="Ошибка инициализации";
+"It will be available choose only "="Будет доступен только выбор ";
+" (default) localization."=" (по умолчанию).";
+"Please, see more in help."="Пожалуйста, смотрите справку.";
+"Empty localization name in 1st line in files:"="Отсутствует имя языка в 1-й строке файлов:";
+"It will be using locale code in language selector. "="Будет использован код локали вместо имени. ";
+"Missing .strings files:"="Отсутствуют .strings файлы:";
+"Translate for this language(s) will be not supporting."="Перевод для этого языка(ов) будет недоступен.";

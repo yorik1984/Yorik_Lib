@@ -61,38 +61,75 @@
 
       <div id="content"><div id='filecontents'><h1>Yorik Lib</h1>
 
-<p>Library of core shared functions used by other extensions.Usage only for SketchUp plugins development. Contain classes, methods, constants. Included in modules:</p>
+<p>Library of core shared functions used by other extensions.Usage only for SketchUp plugins development. Contain classes, methods, constants. Also have classes for making plugin translation. Most of them Included in modules:</p>
 
-<pre class="code ruby"><code class="ruby">module YorikTools
-module YorikTools::YorikLib
+<pre class="code ruby"><code class="ruby">module YorikLib
 </code></pre>
 
-<h2>Files in project</h2>
+<p>and classes</p>
 
-<h4><code>yorik_lib.rb</code></h4>
+<pre class="code ruby"><code class="ruby">class YorikLanguageHandlerDefault
+class YorikLanguageHandler
+</code></pre>
 
-<p><em>Loader for <code>yorik_lib/yorik_lib_core.rb</code></em></p>
+<h2>Directories list</h2>
+
+<h4><code>Plugins/yorik_lib/Resources</code></h4>
+
+<p>Include .strings file for YorikTools plugins translation.</p>
+
+<h4><code>Plugins/yorik_lib/help</code></h4>
+
+<p>Include help file for YorikTools plugins.</p>
+
+<h2>Files list</h2>
+
+<h4><code>Plugins/yorik_lib.rb</code></h4>
+
+<p><em>Loader for YorikLib <code>Plugins/yorik_lib/yorik_lib_core.rb</code></em>
+Include basic constants and methods to load YorikLib into SketchUp.</p>
+
+<pre class="code ruby"><code class="ruby">module YorikTools
+module YorikLibLoader
+</code></pre>
 
 <p><strong>Constants</strong></p>
 
-<pre class="code ruby"><code class="ruby"><span class='const'>PLUGIN_COPYRIGHT</span>
+<pre class="code ruby"><code class="ruby"><span class='const'>FILENAMESPACE</span>
+<span class='const'>PATH_ROOT</span>
+<span class='const'>PATH</span>
+<span class='const'>PLUGIN_COPYRIGHT</span>
 <span class='const'>PLUGIN_CREATOR</span>
+<span class='const'>PLUGIN_ID</span>
+<span class='const'>PLUGIN_NAME</span>
+<span class='const'>PLUGIN_VERSION</span>
+<span class='const'>RESOURCES_DIR</span>
 </code></pre>
 
-<h4><code>yorik_lib/yorik_lib_core.rb</code></h4>
+<h4><code>Plugins/yorik_lib/yorik_lib_core.rb</code></h4>
+
+<p>Include basic methods to make user menu and load YorikLib into SketchUp.</p>
+
+<pre class="code ruby"><code class="ruby">module YorikTools::YorikLibLoader
+</code></pre>
+
+<h4><code>Plugins/yorik_lib/yorik_lib_main_collection.rb</code></h4>
 
 <p><em>Library of core shared methods</em></p>
 
+<pre class="code ruby"><code class="ruby">module YorikLib
+</code></pre>
+
 <p><strong>Methods</strong></p>
 
-<pre class="code ruby"><code class="ruby">def get_definition
-def nested_level
-def collect_by_attribute
-def attributes_list
-def attribute_value
-def components_selected_mbox?
-def about_information
-def help_information
+<pre class="code ruby"><code class="ruby">def self.get_definition
+def self.nested_level
+def self.collect_by_attribute
+def self.attributes_list
+def self.attribute_value
+def self.components_selected_mbox?
+def self.about_information
+def self.open_help_file
 </code></pre>
 
 <h4><code>yorik_lib/yorik_langhandler</code></h4>
@@ -101,7 +138,8 @@ def help_information
 
 <p><strong>Class</strong></p>
 
-<pre class="code ruby"><code class="ruby">class YorikLanguageHandler
+<pre class="code ruby"><code class="ruby">class YorikLanguageHandlerDefault
+class YorikLanguageHandler
 </code></pre>
 
 <p>For more information see Yardoc documentation in: </p>
@@ -147,7 +185,7 @@ along with Yorik Lib.  If not, see <a href="http://www.gnu.org/licenses/">http:/
 </div></div>
 
       <div id="footer">
-  Generated on Sun Jul 31 02:55:02 2016 by
+  Generated on Sat Aug  6 14:58:01 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.0.0).
 </div>
