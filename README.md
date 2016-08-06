@@ -87,9 +87,12 @@ class YorikLanguageHandlerDefault
 class YorikLanguageHandler
 ```
 
-For more information see Yardoc documentation in: 
+ Yardoc documentation in: 
 
-Licensed under the [YorikLib](http://www.rubydoc.info/github/yorik1984/Yorik_Lib/index).
+DOCUMENTATION
+---------
+
+For more information see [YorikLib](http://www.rubydoc.info/github/yorik1984/Yorik_Lib/index) on [rubydoc.info](http://www.rubydoc.info)
 
 CHANGELOG
 ---------
