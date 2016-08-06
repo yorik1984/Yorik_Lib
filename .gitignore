@@ -30,11 +30,11 @@ build-iPhoneSimulator/
 # vendor/Pods/
 
 ## Documentation cache and generated files:
-.yardopts
+#.yardopts
 /.yardoc/
 /_yardoc/
-# /doc/
-# /rdoc/
+/doc/
+/rdoc/
 
 ## Environment normalization:
 /.bundle/

@@ -1,0 +1,8 @@
+Plugins/yorik_lib/*.rb
+Plugins/*.rb
+--markup-provider=redcarpet
+--markup=markdown
+--readme README.md
+-
+HISTORY.md
+
