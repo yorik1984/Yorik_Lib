@@ -89,7 +89,7 @@ class YorikLanguageHandler
 
 For more information see Yardoc documentation in: 
 
-    doc/_index.html
+Licensed under the [YorikLib](http://www.rubydoc.info/github/yorik1984/Yorik_Lib/index).
 
 CHANGELOG
 ---------
