@@ -1,6 +1,7 @@
 // English
 "About..."="About...";
 "Error opening help file:"="Error opening help file:";
+"Error opening default locale help file:"="Error opening default locale help file:";
 "Help"="Help";
 "Language translation"="Language translation";
 "Library of shared functions used by other extensions"="Library of shared functions used by other extensions";

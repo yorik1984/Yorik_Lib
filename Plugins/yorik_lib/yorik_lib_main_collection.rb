@@ -197,17 +197,20 @@ module YorikLib
   end
 
   # Open help file. Html help-file will bee open in new tab of current web browser
-  # @param extension_path [String] full path to extension folder
-  # @param help_file_path [String] relative help file path
-  # @param msg_error [String] open error message
+  # @param help_file_path [String] current locale help file path
+  # @param defaut_help_file_path [String] default locale help file path
+  #        using when current does not exist
+  # @param err_msg [String] error message when default locale help file or
+  #        does not exist
   #
   # @since 1.0
-  def self.open_help_file(extension_path, help_file_path, msg_error = "Error opening help file:")
-    help_file = File.join(extension_path, help_file_path)
-    if File.exist?(help_file)
-      UI.openURL "file://" + help_file
+  def self.open_help_file(help_file_path, defaut_help_file_path, err_msg)
+    if File.exist?(help_file_path)
+      UI.openURL "file://" + help_file_path
+    elsif File.exist?(defaut_help_file_path)
+      UI.openURL "file://" + defaut_help_file_path
     else
-      UI.messagebox (msg_error + "\n" + help_file)
+      UI.messagebox (err_msg + "\n" + defaut_help_file_path)
     end
   end
 

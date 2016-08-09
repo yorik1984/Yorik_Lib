@@ -40,27 +40,34 @@ require_relative "yorik_lib_main_collection"
 # @author Yurij Kulchevich aka yorik1984
 module YorikTools::YorikLibLoader
 
-  yorik_lib_lh_data = { PLUGIN_ID:         PLUGIN_ID,
-                        RESOURCES_DIR:     RESOURCES_DIR,
-                        default_lang_name: "English",
-                        default_locale:    "en_US",
-                        lang_ini_name:     "lang.ini",
-                        locale_file_type:  ".strings",
-                        lh_errors_file:    "LanguageHandler" }
+  lib_lh_data = { PLUGIN_ID:         PLUGIN_ID,
+                  RESOURCES_DIR:     RESOURCES_DIR,
+                  default_lang_name: "English",
+                  default_locale:    "en_US",
+                  lang_ini_name:     "lang.ini",
+                  locale_file_type:  ".strings",
+                  lh_errors_file:    "LanguageHandler" }
 
-  yorik_lib_lh = YorikLanguageHandler.new(yorik_lib_lh_data)
-  plugin_description = yorik_lib_lh["Library of shared functions used by other extensions"]
+  lib_lh                 = YorikLanguageHandler.new(lib_lh_data)
+  plugin_description     = lib_lh["Library of shared functions used by other extensions"]
   @yorik_lib.description = plugin_description
 
   unless file_loaded?(__FILE__)
-    tools_menu = UI.menu("Tools")
-    yorik_lib_menu = tools_menu.add_submenu("Yorik Lib")
-    yorik_lib_lh_menu = yorik_lib_menu.add_submenu(yorik_lib_lh_data[:lh_errors_file])
-    yorik_lib_lh_menu.add_item(yorik_lib_lh["Help"]) { YorikLib::open_help_file(PATH, "help/#{YorikLanguageHandler.self_file_name}/help.html", yorik_lib_lh["Error opening help file:"]) }
-    yorik_lib_menu.add_item(yorik_lib_lh["Language translation"]) { yorik_lib_lh.localization_mbox(yorik_lib_lh["Language translation"]) }
-    yorik_lib_menu.add_item(yorik_lib_lh["Help"]) { YorikLib::open_help_file(PATH, "help/#{FILENAMESPACE}/help.html", yorik_lib_lh["Error opening help file:"]) }
-    yorik_lib_menu.add_item(yorik_lib_lh["About..."]) { YorikLib::about_extension_mbox(@yorik_lib) }
 
+    lib_help         = PATH + "/help/#{FILENAMESPACE}/help_#{lib_lh.locale}.html"
+    default_lib_help = PATH + "/help/#{FILENAMESPACE}/help_#{lib_lh_data[:default_locale]}.html"
+    lh_help          = PATH + "/help/#{YorikLanguageHandler.self_file_name}/help_#{lib_lh.locale}.html"
+    default_lh_help  = PATH + "/help/#{YorikLanguageHandler.self_file_name}/help_#{lib_lh_data[:default_locale]}.html"
+    err_msg          = lib_lh["Error opening default locale help file:"]
+
+    tools_menu       = UI.menu("Tools")
+    lib_menu         = tools_menu.add_submenu(PLUGIN_NAME)
+    lh_menu          = lib_menu.add_submenu(lib_lh_data[:lh_errors_file])
+
+    lh_menu.add_item (lib_lh["Help"])                 { YorikLib::open_help_file(lh_help, default_lh_help, err_msg) }
+    lib_menu.add_item(lib_lh["Language translation"]) { lib_lh.locale_mbox(lib_lh["Language translation"]) }
+    lib_menu.add_item(lib_lh["Help"])                 { YorikLib::open_help_file(lib_help, default_lib_help, err_msg) }
+    lib_menu.add_item(lib_lh["About..."])             { YorikLib::about_extension_mbox(@yorik_lib) }
 
   end
 

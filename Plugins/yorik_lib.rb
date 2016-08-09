@@ -20,6 +20,8 @@
 # History:
 # - 1.0 Initial release 14-July-2016
 # ------------------------------------------------------------------------------
+# The name of this file is important begin from "!" prefix
+# should ensure it is loaded before other plugins.
 
 require "sketchup.rb"
 require "extensions.rb"

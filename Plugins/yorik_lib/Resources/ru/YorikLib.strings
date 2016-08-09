@@ -1,6 +1,7 @@
 // Русский
 "About..."="О программе...";
 "Error opening help file:"="Ошибка открытия файла справки:";
+"Error opening default locale help file:"="Ошибка открытия файла справки для языка по умолчанию:";
 "Help"="Help";
 "Language translation"="Язык интерфейса";
 "Library of shared functions used by other extensions"="Библиотека методов для использования другими плагинами";

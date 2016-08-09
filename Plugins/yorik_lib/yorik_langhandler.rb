@@ -32,7 +32,7 @@
 require "sketchup.rb"
 require "extensions.rb"
 
-# Rewriting of basic Sketchup API class to make localizations for plugins
+# Rewriting of basic Sketchup API class to make locales for plugins
 # using default language. Parent for YorikLanguageHandler class.
 #
 # @author Yurij Kulchevich aka yorik1984
@@ -45,7 +45,7 @@ class YorikLanguageHandlerDefault
   attr_reader :strings, :lh_data
 
   # initialize method
-  # @param lh_data [Hash] input data for make localization
+  # @param lh_data [Hash] input data for make locale
   #
   # @since 1.0
   def initialize(lh_data)
@@ -82,7 +82,7 @@ class YorikLanguageHandlerDefault
     end
   end
 
-  # Finding path for .string with message errors file of default localization
+  # Finding path for .string with message errors file of default locale
   #
   # @since 1.0
   def find_strings_file
@@ -143,14 +143,14 @@ class YorikLanguageHandlerDefault
 
 end # class YorikLanguageHandlerDefault
 
-# Rewriting of basic Sketchup API class to make localizations for plugins.
+# Rewriting of basic Sketchup API class to make locales for plugins.
 #
 # @author Yurij Kulchevich aka yorik1984
 # @since 1.0
 # @see YorikLanguageHandlerDefault
 class YorikLanguageHandler < YorikLanguageHandlerDefault
 
-  attr_reader :lh_data
+  attr_reader :lh_data, :locale
 
   # Initializing object of YorikLanguageHandler class.
   #
@@ -168,7 +168,7 @@ class YorikLanguageHandler < YorikLanguageHandlerDefault
   # @since 1.0
   def make_error_string
     @yorik_inner_lib_lh = YorikLanguageHandlerDefault.new(lh_data)
-    @msg_errors = { first_line: @yorik_inner_lib_lh["Empty localization name in 1st line in file(s):"] + "\n",
+    @msg_errors = { first_line: @yorik_inner_lib_lh["Empty locale name in 1st line in file(s):"] + "\n",
            wrong_strings_files: "",
                    locale_code: @yorik_inner_lib_lh["It will be using locale code in language selector. "] + @yorik_inner_lib_lh["Please, see more in help."],
                missing_strings: @yorik_inner_lib_lh["Missing .strings files:"] + "\n",
@@ -225,27 +225,30 @@ class YorikLanguageHandler < YorikLanguageHandlerDefault
     name_with_locale
   end
 
-  # Write selected localization to file
-  # @param current_localization [String] current locale code(dir name)
+  # Write selected locale to file
+  # @param current_locale [String] current locale code(dir name)
   #
   # @since 1.0
-  def write_localization_to_file(current_localization)
-    File.open(@lang_ini_path, 'w'){ |file| file.write current_localization}
+  def write_locale_to_file(current_locale)
+    File.open(@lang_ini_path, 'w'){ |file| file.write current_locale}
   end
 
-  # Finding strings file using localization data
+
+  # Finding strings file using locale data
   #
-  # @return [String] .strings file path for current localization
+  # @return [String] .strings file path for current locale
   # @since 1.0
   def find_strings_file
-    localization = ""
+    locale = ""
     line = File.open(@lang_ini_path, 'r:BOM|UTF-8').readlines[0]
-    localization = line.chomp
+    locale = line.chomp
+    @locale = locale
     strings_file =
-        File.join(@resources_dir, localization, @plugin_id + @locale_file_type)
+        File.join(@resources_dir, locale, @plugin_id + @locale_file_type)
     return strings_file if File.exist?(strings_file)
     @strings_file_missing_error = true
-    write_localization_to_file(@default_locale)
+    @locale = @default_locale
+    write_locale_to_file(@default_locale)
     strings_file =
         File.join(@resources_dir, @default_locale, @plugin_id + @locale_file_type)
   end
@@ -255,9 +258,9 @@ class YorikLanguageHandler < YorikLanguageHandlerDefault
   #
   # @return [Sketcup::UI] inputbox
   # @since 1.0
-  def localization_mbox(inputbox_window_name)
-    localization_dir_locale_list = make_name_with_locale
-    current_localization = @default_locale
+  def locale_mbox(inputbox_window_name)
+    locale_dir_locale_list = make_name_with_locale
+    current_locale = @default_locale
     UI.messagebox(@msg_errors[:missing_strings] +
                   @msg_errors[:missing_strings_files] +
                   @msg_errors[:unusing_string]) if @strings_file_missing_error
@@ -271,11 +274,11 @@ class YorikLanguageHandler < YorikLanguageHandlerDefault
     defaults[0] = @default_lang_name
     list = []
     list[0] = ""
-    localization_dir_locale_list.each_value { |value|
+    locale_dir_locale_list.each_value { |value|
       list[0] = list[0] + value.to_s + "|" }
     inputbox = UI.inputbox(prompts, defaults, list, inputbox_window_name)
-    current_localization = localization_dir_locale_list.key(inputbox[0]).to_s
-    write_localization_to_file(current_localization) unless inputbox[0].nil?
+    current_locale = locale_dir_locale_list.key(inputbox[0]).to_s
+    write_locale_to_file(current_locale) unless inputbox[0].nil?
   end
 
 end # class YorikLanguageHandler
