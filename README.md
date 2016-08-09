@@ -24,7 +24,7 @@ Include help file for YorikTools plugins.
 Files list
 ----------------
 
-#### `Plugins/!yorik_lib.rb`
+#### `Plugins/yorik_lib.rb`
 
 *Loader for YorikLib `Plugins/yorik_lib/yorik_lib_core.rb`*
 Include basic constants and methods to load YorikLib into SketchUp.
