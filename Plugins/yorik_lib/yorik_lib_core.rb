@@ -48,16 +48,16 @@ module YorikTools::YorikLibLoader
                   locale_file_type:  ".strings",
                   lh_errors_file:    "LanguageHandler" }
 
-  lib_lh                 = YorikLanguageHandler.new(lib_lh_data)
+  lib_lh                 = YorikLangHandler.new(lib_lh_data)
   plugin_description     = lib_lh["Library of shared functions used by other extensions"]
   @yorik_lib.description = plugin_description
 
   unless file_loaded?(__FILE__)
 
-    lib_help         = PATH + "/help/#{FILENAMESPACE}/help_#{lib_lh.locale}.html"
-    default_lib_help = PATH + "/help/#{FILENAMESPACE}/help_#{lib_lh_data[:default_locale]}.html"
-    lh_help          = PATH + "/help/#{YorikLanguageHandler.self_file_name}/help_#{lib_lh.locale}.html"
-    default_lh_help  = PATH + "/help/#{YorikLanguageHandler.self_file_name}/help_#{lib_lh_data[:default_locale]}.html"
+    lib_help         = PATH + "/help/#{FILENAMESPACE}_#{lib_lh.locale}.html"
+    default_lib_help = PATH + "/help/#{FILENAMESPACE}_#{lib_lh_data[:default_locale]}.html"
+    lh_help          = PATH + "/help/#{YorikLangHandler.self_file_name}_#{lib_lh.locale}.html"
+    default_lh_help  = PATH + "/help/#{YorikLangHandler.self_file_name}_#{lib_lh_data[:default_locale]}.html"
     err_msg          = lib_lh["Error opening default locale help file:"]
 
     tools_menu       = UI.menu("Tools")

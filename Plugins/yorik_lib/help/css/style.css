@@ -8,9 +8,7 @@ body {
 }
 
 code {
-	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 90%;
+	font-family: monospace;
 }
 
 h1 {
@@ -60,6 +58,7 @@ h2 {
 .content {
 	margin: 20px 20px 20px 250px;
 	padding: 5px 5px 5px 5px;
+	width: 60%;
 }
 
 .content p {

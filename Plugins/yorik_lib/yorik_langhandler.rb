@@ -33,14 +33,14 @@ require "sketchup.rb"
 require "extensions.rb"
 
 # Rewriting of basic Sketchup API class to make locales for plugins
-# using default language. Parent for YorikLanguageHandler class.
+# using default language. Parent for YorikLangHandler class.
 #
 # @author Yurij Kulchevich aka yorik1984
 # @since 1.0
 # @see http://www.sketchup.com/intl/en/developer/docs/ourdoc/languagehandler
 # @see YorikLanguageHandler
 
-class YorikLanguageHandlerDefault
+class YorikLangHandlerDefault
 
   attr_reader :strings, :lh_data
 
@@ -141,20 +141,20 @@ class YorikLanguageHandlerDefault
     return true
   end
 
-end # class YorikLanguageHandlerDefault
+end # class YorikLangHandlerDefault
 
 # Rewriting of basic Sketchup API class to make locales for plugins.
 #
 # @author Yurij Kulchevich aka yorik1984
 # @since 1.0
-# @see YorikLanguageHandlerDefault
-class YorikLanguageHandler < YorikLanguageHandlerDefault
+# @see YorikLangHandlerDefault
+class YorikLangHandler < YorikLangHandlerDefault
 
   attr_reader :lh_data, :locale
 
-  # Initializing object of YorikLanguageHandler class.
+  # Initializing object of YorikLangHandler class.
   #
-  # @see YorikLanguageHandlerDefault::initialize
+  # @see YorikLangHandlerDefault::initialize
   # @since 1.0
   def initialize(lh_data)
     @lh_data = lh_data
@@ -167,7 +167,7 @@ class YorikLanguageHandler < YorikLanguageHandlerDefault
   #
   # @since 1.0
   def make_error_string
-    @yorik_inner_lib_lh = YorikLanguageHandlerDefault.new(lh_data)
+    @yorik_inner_lib_lh = YorikLangHandlerDefault.new(lh_data)
     @msg_errors = { first_line: @yorik_inner_lib_lh["Empty locale name in 1st line in file(s):"] + "\n",
            wrong_strings_files: "",
                    locale_code: @yorik_inner_lib_lh["It will be using locale code in language selector. "] + @yorik_inner_lib_lh["Please, see more in help."],
@@ -281,5 +281,5 @@ class YorikLanguageHandler < YorikLanguageHandlerDefault
     write_locale_to_file(current_locale) unless inputbox[0].nil?
   end
 
-end # class YorikLanguageHandler
+end # class YorikLangHandler
 
