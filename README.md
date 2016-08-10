@@ -9,8 +9,8 @@ module YorikLib
 and classes
 
 ```ruby
-class YorikLanguageHandlerDefault
-class YorikLanguageHandler
+class YorikLangHandlerDefault
+class YorikLangHandler
 ```
 
 Directories list
@@ -83,8 +83,8 @@ def self.open_help_file
 **Class**
 
 ```ruby
-class YorikLanguageHandlerDefault
-class YorikLanguageHandler
+class YorikLangHandlerDefault
+class YorikLangHandler
 ```
 
  Yardoc documentation in: 
