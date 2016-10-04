@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Help file of plugin "LangHandler"</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+</head>
+<body>
+<div class="layout-wrapper">
+    <div class="header">
+        <h1>LangHandler</h1>
+    </div>
+    <div class="menu">
+        <div><a href="#about">About</a></div>
+        <div><a href="#structure">Data structure</a></div>
+        <div><a href="#using">Using</a></div>
+        <div><a href="#errors">Errors</a></div>
+        <div><a href="#install">Installing</a></div>
+        <div><a href="#development">Development</a></div>
+    </div>
+    <div class="content">
+        <h2 id="about">About</h2>
+        <p>Plugin for Sketchup&#174; 2014 Pro or higher. Added new features, first of all for personal use,  from standard Sketchup&#174; API <a href="http://www.sketchup.com/intl/en/developer/docs/ourdoc/languagehandler" target="_blank" rel="noopener noreferrer">LanguageHandler</a> for localization of plugins. </p>
+        <p>It's only one file <code>yorik_langhandler.rb</code> and directory <code>yorik_langhandler</code>, which includes subdirectories with localized strings for two languages: English (<code>en_US</code>) and Russian (<code>ru</code>), also manual in these languages. This localized files using for system errors when localization works incorrect. Plugins for localization has data structure which described below. But data structure of this plugin looks like this:
+        <p><img src="img/lh_dir_structure.png" height=40%></p>
+        <p><strong>Similar with standard tool:</strong>
+            <ul>
+                <li>rules of creating <code>.strings</code> files</li>
+                <li>using same <code>.strings</code> files from standard tool</li>
+            </ul>
+        </p>
+        <p><strong>Differences with standard tool:</strong>
+        <ul>
+            <li>ability to change language (localization) of interface (need restart of Sketchup)</li>
+            <li>language of plugin does not depending from interface language of Sketchup</li>
+        </ul>
+        </p>
+
+        <h2 id="structure">Data structure</h2>
+        <p>This structure is only a recommendation. Any developer can adopt for concrete situation. Important only availability files for default language localization and valid path for files of other language.</p>
+        <p>Process to set value of the arguments for creating object of <code><strong>YorikLangHandler</strong> class</code> for example of plugin <code><strong>Yorik Lib</strong></code>:</p>
+        <ol class="alpha-list">
+            <li>Typical files structure of localized plugin.</li>
+            <li>Initial data for localized variables.</li>
+            <li>Example of the <code>.strings</code> file for default language (English).</li>
+        </ol>
+        <img src="img/compare_field.png" width=100%>
+        <ol class="number-list">
+            <li>File name with localized strings. In this case using plugin's name.</li>
+            <li>Path to the directory with localized data.</li>
+            <li>Default locale. Comment in 1-st line of the <code>.strings</code> file. Necessarily must to be in all files of default localization. This value will be using like language menu item.</li>
+            <li>Locale code for default language. Name of the subdirectory in the directory <code>Resources/</code>.</li>
+            <li>System file with content of the current code (directory name) chosen language. Will be creating automatic if it will bee absent. <em>Not for manual editing (!).</em></li>
+            <li>localization file type. Can be changed if it is needed.</li>
+        </ol>
+        <p>More details can be finding in source code on <a href="https://github.com/yorik1984/Yorik_Lib/blob/master/Plugins/yorik_lib/yorik_lib_core.rb#L43" target="_blank" rel="noopener noreferrer">GitHub</a> or in the file <code>yorik_lib/yorik_lib_core.rb</code>.</p>
+
+        <h2 id="using">Using</h2>
+        <p>Include file in source code:</p>
+        <pre><p><ruby><span class="rubyspecial">require</span> <span class="rubystring">"yorik_langhandler.rb"</span></ruby></p></pre>
+        <p>Before using localization tool you need to prepare strings variable like in the original tool (see more in <a href="http://www.sketchup.com/intl/en/developer/docs/ourdoc/languagehandler" target="_blank" rel="noopener noreferrer">LanguageHandler</a>), creating localization file (<code>.strings</code>) and data structure (see  above). After that you can change language in target plugin.</p>
+
+        <p>Language translation menu created by method call <code>locale_mbox</code> on object <code>lib_lh</code> of <code><strong>YorikLangHandler</strong></code> class. For example showing for <code>user_menu</code>. Also can be calling by button.</p>
+        <pre><p><ruby>user_menu.<span class="rubymethod">add_item</span>(lib_lh[<span class="rubystring">"Language translation"</span>]) { lib_lh.<span class="rubymethod">locale_mbox</span>(lib_lh[<span class="rubystring">"Language translation"</span>]) }</ruby></p></pre>
+        <p><code>"Language translation"</code> &mdash; localized string that will be menu item and window title.</p>
+
+        <p>Now languages selection will be available in menu (example for plugin <code><strong>Yorik Lib</strong></code>):</p>
+
+        <p><code><strong>Tools &#9658; Yorik Lib &#9658; Language translation</strong></code></p>
+        <p><img src="img/using_lang_menu_en.png" height=40%></p>
+
+        <h2 id="errors">Errors</h2>
+        <p>In creating plugin's translation it's necessary to keep correct data structure for default language. For other languages will allowed to simplify data. For example:</p>
+        <ul>
+            <li>When localization data for other languages are missing it will be using default language.</li>
+        </ul>
+        <p>In some case data structure of one language can be corrupted. It will be showing messagebox with error but still working translation for other languages:</p>
+        <ol class="error-list">
+            <li>When comment with language's name in 1-st line is absent it will be using locale code (directory name) like menu item in Languages translation.</li>
+            <p><img src="img/error_first_line_en.png" width=50%></p>
+            <li>Showing after activate menu with Languages translation if in directory with name of locale code in <code>Resources/</code> <code>.strings</code> file will be absent. Also will be showing list of missing files. Translation for this languages will be not available.</li>
+            <p><img src="img/error_missing_strings_en.png" width=50%></p>
+        </ol>
+        <p>Correct structure of <code>.strings</code> files depends from developer. Need to check matching strings in <code>.strings</code> file if in some case translation will be absent for this string.</p>
+
+        <h2 id="install">Installing</h2>
+        <p>Plugin works only in Sketchup&#174; 2014. Update before install.
+        <a href="http://help.sketchup.com/en/article/38583" target="_blank" rel="noopener noreferrer">Installing Ruby Plugins in Sketchup</a>.</p>
+
+        <h2 id="development">Development</h2>
+        <p>Source code on <a href="https://github.com/yorik1984/Yorik_Lib/blob/master/Plugins/yorik_lib/yorik_langhandler.rb" target="_blank" rel="noopener noreferrer">GitHub</a>. Documentation on <a href="http://www.rubydoc.info/github/yorik1984/Yorik_Lib/YorikLangHandler" target="_blank" rel="noopener noreferrer">rubydoc.info</a>.</p>
+    </div>
+    <div class="footer">
+        <p>&copy; 2016 Yurij Kulchevich</p>
+    </div>
+</div>
+</body>
+</html>

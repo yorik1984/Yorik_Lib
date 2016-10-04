@@ -1,9 +1,0 @@
-// Українська
-"Error to initialize"="Помилка ініціалізації";
-"It will be available choose only "="Буде доступний тільки вибір ";
-" (default) localization."=" (за замовчуванням).";
-"Please, see more in help."="Будь-ласка, дивіться довідку.";
-"Empty localization name in 1st line in files:"="Відсутня назва мови в 1-й стрічці файлів:";
-"It will be using locale code in language selector. "="Буде використано код локалі замість імені. ";
-"Missing .strings files:"="Відсутні .strings файли:";
-"Translate for this language(s) will be not supporting."="Переклад для цих мов(ви) буде недоступний.";

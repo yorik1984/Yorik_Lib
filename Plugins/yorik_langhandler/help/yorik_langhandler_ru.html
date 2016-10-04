@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Справочная страница для "LangHandler"</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+</head>
+<body>
+<div class="layout-wrapper">
+    <div class="header">
+        <h1>LangHandler</h1>
+    </div>
+    <div class="menu">
+        <div><a href="#about">Описание</a></div>
+        <div><a href="#structure">Структура данных</a></div>
+        <div><a href="#using">Использование</a></div>
+        <div><a href="#errors">Упрощения и ошибки</a></div>
+        <div><a href="#install">Установка</a></div>
+        <div><a href="#development">Для разработчиков</a></div>
+    </div>
+    <div class="content">
+        <h2 id="about">Описание</h2>
+        <p>Для использования в Sketchup&#174; 2014 Pro или выше. Доработанный инструмент, в первую очередь  для собственных нужд,  из стандартного набора Sketchup&#174; API <a href="http://www.sketchup.com/intl/en/developer/docs/ourdoc/languagehandler" target="_blank" rel="noopener noreferrer">LanguageHandler</a> для локализации плагинов. </p>
+        <p>Представляет собой файл <code>yorik_langhandler.rb</code> и каталог <code>yorik_langhandler</code>, который включает в себя каталоги с локализованными строками для двух языков: English (<code>en_US</code>) и Русский (<code>ru</code>), а также справочное руководство на вышеупомянутых языках. Эти локализованные файлы используются для системных сообщений об ошибках при некорректной работе локализации. Плагины, которые необходимо локализовать имеют свою структуру данных, которая описана ниже. Структура же файлов и каталогов данного плагина выглядит таким образом:
+        <p><img src="img/lh_dir_structure.png" height=40%></p>
+        <p><strong>Общее из стандартным инструментом:</strong>
+            <ul>
+                <li>принцип создание локализованных строк аналогичен оригинальному инструменту</li>
+                <li>возможность использовать одни и те же файлы локализации <code>.strings</code></li>
+            </ul>
+        </p>
+        <p><strong>Некоторые отличия от стандартного:</strong>
+        <ul>
+            <li>возможность смены языка (локализации) интерфейса (для вступления в силу нового перевода необходим перезапуск программы)</li>
+            <li>язык интерфейса плагина не зависит от текущего языка программы</li>
+        </ul>
+        </p>
+
+        <h2 id="structure">Структура данных</h2>
+        <p>Данная структура носит лишь рекомендательный характер. Поэтому каждый может ее адаптировать под свои нужды в зависимости от ситуации. Важно лишь обязательное наличие локализации для языка по умолчанию и правильно указывать путь к нужным файлам для других языков.</p>
+        <p>Механизм установки значений аргументов для создания объекта класса <code><strong>YorikLangHandler</strong></code> на примере плагина <code><strong>Yorik Lib</strong></code>:</p>
+        <ol class="alpha-list">
+            <li>Типовая структура каталогов и файлов локализованного плагина.</li>
+            <li>Исходный данные для инициализации локализованных переменных.</li>
+            <li>Пример файла <code>.strings</code> для языка по умолчанию (English).</li>
+        </ol>
+        <img src="img/compare_field.png" width=100%>
+        <ol class="number-list">
+            <li>Имя файла с локализованными переменными. В данном случае используется имя плагина.</li>
+            <li>Путь к каталогу с локализованными данными.</li>
+            <li>Локализация по умолчанию. Комментарий в первой строке файла <code>.strings</code>. Обязательно должен быть во всех файлах для локализации по умолчанию. Его значение будет использоваться в качестве пункта меню при выборе языка.</li>
+            <li>Код локали для языка по умолчанию. Это имя подкаталога в каталоге <code>Resources/</code>.</li>
+            <li>Имя файла, где будет хранится текущий код (имя каталога) выбранного языка. При его отсутствии, он будет создан автоматически. <em>Не для редактирования вручную (!).</em></li>
+            <li>Расширение файлов локализации. При необходимости можно изменить.</li>
+        </ol>
+        <p>Более подробно механизм работы можно посмотреть в исходном коде на <a href="https://github.com/yorik1984/Yorik_Lib/blob/master/Plugins/yorik_lib/yorik_lib_core.rb#L43" target="_blank" rel="noopener noreferrer">GitHub</a> или в файле <code>yorik_lib/yorik_lib_core.rb</code>.</p>
+
+        <h2 id="using">Использование</h2>
+        <p>Используется путем подключения исходного кода командой:</p>
+        <pre><p><ruby><span class="rubyspecial">require</span> <span class="rubystring">"yorik_langhandler.rb"</span></ruby></p></pre>
+        <p>Подключив к своему плагину данный инструмент, появится возможность менять язык. Для этого нужно в исходном коде плагина применить методику обработки переменных, содержащие строки для перевода, как и в оригинальном варианте локализатора (подробнее см. <a href="http://www.sketchup.com/intl/en/developer/docs/ourdoc/languagehandler" target="_blank" rel="noopener noreferrer">LanguageHandler</a>), подготовить нужные файлы локализации (<code>.strings</code>) и структуру данных (показано выше).</p>
+        <p>Создание меню выбора языка осуществляется вызовом метода <code>locale_mbox</code> на обьекте <code>lib_lh</code> класса <code><strong>YorikLangHandler</strong></code>. Показано на примере добавление в меню пользователя <code>user_menu</code>. Аналогичный вызов можно реализовать через кнопку.</p>
+        <pre><p><ruby>user_menu.<span class="rubymethod">add_item</span>(lib_lh[<span class="rubystring">"Language translation"</span>]) { lib_lh.<span class="rubymethod">locale_mbox</span>(lib_lh[<span class="rubystring">"Language translation"</span>]) }</ruby></p></pre>
+        <p><code>"Language translation"</code> &mdash; это локализованная строка, которая будет являться пунктом пользовательского меню и заголовком окна. Для русского языка переводом данной строки будет являться строка <code>"Язык интерфейса"</code>.</p>
+
+        <p>После этого менять язык интерфейса можно будет с помощью меню (пример использования для плагина <code><strong>Yorik Lib</strong></code>):</p>
+
+        <p><code><strong>Tools &#9658; Yorik Lib &#9658; Язык интерфейса</strong></code></p>
+        <p><img src="img/using_lang_menu_ru.png" height=40%></p>
+
+        <h2 id="errors">Упрощения и ошибки</h2>
+        <p>При создании переводов для собственных плагинов необходимо следить за правильной структурой файлов для языка по умолчанию. Для других языков допускаются некоторые упрощения. Например:</p>
+        <ul>
+            <li>При отсутствии файлов для других локализации языков, будет использован язык по умолчанию.</li>
+        </ul>
+        <p>В некоторых случаях при нарушении структуры файлов и каталогов для одного из языков все же могут появится сообщения об ошибке, но не влияющие на правильную работу переводов для других языков:</p>
+        <ol class="error-list">
+            <li>В первой строке файла локализованных строк <code>.strings</code> отсутствует первая строка с комментарием, в котором указано наименование языка. При отсутствии в первой строке комментария с именем языка, в качестве пункта меню будет показан код языка (локали), который в свою очередь будет являться именем каталога с локализованными данными.</li>
+            <p><img src="img/error_first_line_ru.png" width=50%></p>
+            <li>Появится при вызове меню, если после сканирования каталога с кодом языка (локали) в <code>Resources/</code> обнаружится отсутствие необходимых файлов <code>.strings</code>. Также будет перечислено список отсутствующих файлов. Перевод для этой локали будет недоступен.</li>
+            <p><img src="img/error_missing_strings_ru.png" width=50%></p>
+        </ol>
+        <p>Правильность составления <code>.strings</code> файлов все же лежит на разработчике. Если в некоторых случаях будет отсутствовать перевод, то необходимо проверить сопоставление в строк в <code>.strings</code> файле.</p>
+        <h2 id="install">Установка</h2>
+
+        <p>Плагин работает только в Sketchup&#174; 2014 Pro или выше. Установите новую версию программы перед использованием плагина.
+        <a href="http://help.sketchup.com/en/article/38583" target="_blank" rel="noopener noreferrer">Installing Ruby Plugins in Sketchup</a>.</p>
+        <h2 id="development">Для разработчиков</h2>
+        <p>Исходный код плагина на <a href="https://github.com/yorik1984/Yorik_Lib/blob/master/Plugins/yorik_lib/yorik_langhandler.rb" target="_blank" rel="noopener noreferrer">GitHub</a>. Документация (на англ. языке) на <a href="http://www.rubydoc.info/github/yorik1984/Yorik_Lib/YorikLangHandler" target="_blank" rel="noopener noreferrer">rubydoc.info</a>.</p>
+    </div>
+    <div class="footer">
+        <p>&copy; 2016 Yurij Kulchevich</p>
+    </div>
+</div>
+</body>
+</html>

@@ -44,19 +44,26 @@ class YorikLangHandlerDefault
 
   attr_reader :strings, :lh_data
 
+  @@LH_ERRORS_FILE   = "LangHandler"
+  @@LH_FILENAMESPACE = File.basename(__FILE__, ".rb")
+  @@LH_PATH_ROOT     = File.dirname(__FILE__).freeze
+  @@LH_PATH          = File.join(@@LH_PATH_ROOT, @@LH_FILENAMESPACE).freeze
+  @@LH_RESOURCES_DIR = File.join(@@LH_PATH, "Resources").freeze
+
   # initialize method
   # @param lh_data [Hash] input data for make locale
   #
   # @since 1.0
   def initialize(lh_data)
-    @lh_data = lh_data
+    @lh_data           = lh_data
     @default_lang_name = @lh_data[:default_lang_name]
     @default_locale    = @lh_data[:default_locale]
     @lang_ini_name     = @lh_data[:lang_ini_name]
     @locale_file_type  = @lh_data[:locale_file_type]
     @resources_dir     = @lh_data[:RESOURCES_DIR]
     @plugin_id         = @lh_data[:PLUGIN_ID]
-    @lh_errors_file    = @lh_data[:lh_errors_file]
+    @lh_errors_file    = @@LH_ERRORS_FILE
+    @lh_resources_dir  = @@LH_RESOURCES_DIR
     @strings           = Hash.new { |hash, key| key }
     check_default_ini_file
     parse
@@ -86,7 +93,7 @@ class YorikLangHandlerDefault
   #
   # @since 1.0
   def find_strings_file
-    File.join(@resources_dir, @default_locale, @lh_errors_file + @locale_file_type)
+    File.join(@lh_resources_dir, @default_locale, @lh_errors_file + @locale_file_type)
   end
 
   # @param [String] key
@@ -168,7 +175,7 @@ class YorikLangHandler < YorikLangHandlerDefault
   # @since 1.0
   def make_error_string
     @yorik_inner_lib_lh = YorikLangHandlerDefault.new(lh_data)
-    @msg_errors = { first_line: @yorik_inner_lib_lh["Empty locale name in 1st line in file(s):"] + "\n",
+    @msg_errors = { first_line: @yorik_inner_lib_lh["Empty localization name in 1st line in file(s):"] + "\n",
            wrong_strings_files: "",
                    locale_code: @yorik_inner_lib_lh["It will be using locale code in language selector. "] + @yorik_inner_lib_lh["Please, see more in help."],
                missing_strings: @yorik_inner_lib_lh["Missing .strings files:"] + "\n",

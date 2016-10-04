@@ -26,7 +26,7 @@
 require "sketchup.rb"
 require "extensions.rb"
 
-require "yorik_lib/yorik_langhandler.rb"
+require "yorik_langhandler.rb"
 
 # Personal name space of yorik1984 in SketchUp plugins development.
 #
